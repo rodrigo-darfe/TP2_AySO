@@ -1,0 +1,15 @@
+1  fdisk /dev/sdb
+2  fdisk /dev/sdc
+3  fdisk /dev/sdd
+4  lsblk
+5  pvcreate /dev/sdb /dev/sdc /dev/sdd
+6  pvcreate /dev/sdb
+7  lsblk
+8  pvs
+9  pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1
+10 vgcreate datos /dev/sdb1 /dev/sdc1 /dev/sdd1 
+11 lvcreate -L 1G -n www datos
+12 lvcreate -L 4G -n salvas datos
+13 vgdisplay datos
+14 lvextend -L +1G /dev/datos/www
+15 history > history.txt
